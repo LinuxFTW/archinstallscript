@@ -12,6 +12,10 @@ adduser -m jonah
 # Install any extra packages needed
 pacman -S grub i3 firefox termite git python3 pip3 xorg-xinit xorg-server
 
+# Setup and Configure Grub
+grub-install --target=i386-pc /dev/sda
+grub-mkconfig -o /boot/grub/grub.cfg
+
 # Copy Config Files
 mkdir /home/jonah/.config/termite; cp termite/config /home/jonah/.config/termite
 mkdir /home/jonah/.config/i3; cp i3/config /home/jonah/.config/i3
